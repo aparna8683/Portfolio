@@ -9,7 +9,7 @@ const cards = [
   {
     emoji: "💻",
     title: "Problem Solving",
-    desc: "Solved 600+ DSA problems across multiple platforms.",
+    desc: "Practicing DSA, system design, DBMS, OS, and AI through projects, notes, and interview preparation.",
   },
   {
     emoji: "🏆",
@@ -65,8 +65,7 @@ const About = () => {
             </p>
 
             <p className="mt-4 text-slate-400 text-lg leading-relaxed">
-              My goal is to create innovative products that solve real-world
-              problems and contribute meaningfully to the future of technology.
+              I like learning by building: taking an idea, turning it into a working system, then understanding why the system works.
             </p>
           </motion.div>
 
