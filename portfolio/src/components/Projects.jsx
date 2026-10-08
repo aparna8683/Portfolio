@@ -1,37 +1,10 @@
 import { motion } from "framer-motion";
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
-
-const projects = [
-  { title:"AI Business Assistant", status:"Built", description:"AI-powered business workflow assistant with analysis, structured outputs, and practical automation.", tech:["AI","LLM","Agents","Node.js"], github:"https://github.com/aparna8683/ai-business-assistant-", live:null },
-  { title:"Solron AI", status:"Next → Deploy", description:"AI workflow focused on analysis, generation, validation and repair. Deployment is the next milestone.", tech:["GenAI","Groq","Playwright","Node.js"], github:"https://github.com/aparna8683/Soul_Clone_AI", live:null },
-  { title:"AI Resume Builder", status:"Built", description:"AI-assisted resume creation with templates, themes, visibility controls and PDF export.", tech:["MERN","AI","MongoDB","Cloudinary"], github:"https://github.com/aparna8683/resume_builder", live:null },
-  { title:"Aivoa QMS", status:"Built", description:"Quality-management workflow project combining a modern frontend, APIs, Postgres and Docker.", tech:["React","API","Postgres","Docker"], github:"https://github.com/aparna8683/Aivoa-QMS", live:null },
-  { title:"Stock Price Predictor", status:"Built", description:"Machine-learning project exploring preprocessing, model selection, evaluation and prediction workflows.", tech:["Python","Pandas","ML","EDA"], github:"https://github.com/aparna8683/Stock-Price-Predictor", live:null },
-  { title:"FinTrack", status:"Built", description:"Personal finance product focused on tracking expenses and presenting financial information clearly.", tech:["React","Node.js","MongoDB"], github:"https://github.com/aparna8683/FinTrack", live:null },
-];
-
-export default function Projects(){
- return <section id="projects" className="relative py-32 bg-[#0B1020] text-white overflow-hidden">
-  <div className="absolute inset-0 pointer-events-none opacity-10 bg-[radial-gradient(circle_at_80%_15%,#22d3ee_0,transparent_25%),radial-gradient(circle_at_10%_80%,#8b5cf6_0,transparent_25%)]"/>
-  <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
-   <motion.div initial={{opacity:0,y:35}} whileInView={{opacity:1,y:0}} viewport={{once:true}} className="mb-16">
-    <p className="text-cyan-400 font-semibold tracking-wider mb-3">SELECTED WORK</p>
-    <h2 className="text-4xl md:text-6xl font-bold">Projects that move from <span className="bg-gradient-to-r from-cyan-300 to-violet-400 bg-clip-text text-transparent">idea → system.</span></h2>
-    <p className="mt-6 text-slate-400 text-lg max-w-2xl">I keep project status honest: built projects are labeled built, and deployment work stays visibly in progress.</p>
-   </motion.div>
-   <div className="grid md:grid-cols-2 gap-7">
-    {projects.map((p,i)=><motion.article key={p.title} initial={{opacity:0,y:35}} whileInView={{opacity:1,y:0}} transition={{delay:i*.06}} viewport={{once:true}} whileHover={{y:-8}} className="group rounded-3xl border border-white/10 bg-white/[.045] backdrop-blur-md p-7 min-h-[315px] flex flex-col">
-      <div className="flex items-center justify-between text-xs font-mono text-slate-600"><span>0{i+1}</span><span className="text-emerald-300">{p.status}</span></div>
-      <h3 className="text-2xl md:text-3xl font-bold mt-10 mb-4">{p.title}</h3>
-      <p className="text-slate-400 leading-relaxed">{p.description}</p>
-      <div className="flex flex-wrap gap-2 mt-6">{p.tech.map(t=><span key={t} className="px-3 py-1.5 rounded-full border border-white/10 bg-white/[.03] text-xs text-slate-300">{t}</span>)}</div>
-      <div className="mt-auto pt-7 flex gap-3">
-       <a href={p.github} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border border-white/10 hover:bg-white/10 text-sm"><FaGithub/> Repository ↗</a>
-       {p.live ? <a href={p.live} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-gradient-to-r from-cyan-500 to-violet-500 text-sm font-semibold"><FaExternalLinkAlt/> Live</a> : <span className="inline-flex items-center px-4 py-2.5 rounded-xl bg-white/[.03] text-xs text-slate-600">No public deployment yet</span>}
-      </div>
-    </motion.article>)}
-   </div>
-   <div className="mt-7 rounded-2xl border border-dashed border-white/10 p-5 bg-white/[.02]"><span className="text-xs font-mono text-cyan-300">NEXT ON THE BOARD</span><div className="mt-2 flex flex-wrap items-center gap-x-8 gap-y-2 text-sm"><strong>House Price Prediction</strong><span className="text-slate-500">ML application project — planned</span><strong>Solron AI deployment</strong><span className="text-slate-500">next milestone</span></div></div>
-  </div>
- </section>;
-}
+const projects=[
+{title:"AI Business Assistant",type:"AI PRODUCT",desc:"An AI-powered business assistant designed around analysis, structured outputs and practical workflow automation.",tech:["LLM","AI Agents","Node.js","APIs"],github:"https://github.com/aparna8683/ai-business-assistant-",live:null},
+{title:"Solron AI",type:"AI SYSTEM · IN PROGRESS",desc:"A website-analysis and AI generation workflow with validation and repair. The next milestone is public deployment.",tech:["Groq","Playwright","Node.js","GenAI"],github:"https://github.com/aparna8683/Soul_Clone_AI",live:null},
+{title:"AI Resume Builder",type:"DEPLOYED",desc:"An AI-assisted resume builder with templates, themes, visibility controls, media support and PDF export.",tech:["React","Node.js","MongoDB","AI"],github:"https://github.com/aparna8683/resume_builder",live:"https://resume-builder-client-hspy.onrender.com/"},
+{title:"FinTrack",type:"DEPLOYED",desc:"A personal finance application for tracking expenses and presenting financial information through a clean web interface.",tech:["React","Node.js","MongoDB"],github:"https://github.com/aparna8683/FinTrack",live:"https://fin-track-indol-xi.vercel.app/login"},
+{title:"AI Interview Prep Bot",type:"DEPLOYED",desc:"An interview-practice platform built around AI-assisted mock sessions and preparation workflows.",tech:["React","Node.js","MongoDB","AI"],github:null,live:"https://guvii-project-frontendd.onrender.com/"},
+{title:"Aivoa QMS",type:"ENGINEERING",desc:"Quality-management workflow work combining frontend, APIs, PostgreSQL and Docker.",tech:["React","FastAPI","Postgres","Docker"],github:"https://github.com/aparna8683/Aivoa-QMS",live:null}];
+export default function Projects(){return <section id="projects" className="relative py-32 bg-[#080808] text-white border-t border-white/[.06]"><div className="max-w-7xl mx-auto px-6 lg:px-12"><div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-14"><div><p className="section-kicker">02 / SELECTED WORK</p><h2 className="display-title">Built, shipped,<br/><em>still evolving.</em></h2></div><p className="text-neutral-600 max-w-sm text-sm leading-7">A mix of deployed products and active engineering work. No inflated case studies — just what I actually built.</p></div><div className="grid md:grid-cols-2 gap-px bg-white/[.08] border border-white/[.08]">{projects.map((p,i)=><motion.article key={p.title} initial={{opacity:0}} whileInView={{opacity:1}} transition={{delay:i*.05}} viewport={{once:true}} className="bg-[#0b0b0b] p-7 md:p-9 min-h-[330px] flex flex-col hover:bg-[#101010] transition-colors"><div className="flex justify-between gap-4"><span className="text-[10px] font-mono tracking-[.14em] text-neutral-600">0{i+1}</span><span className="text-[10px] font-mono tracking-[.12em] text-neutral-500">{p.type}</span></div><h3 className="mt-12 text-2xl font-semibold tracking-[-.035em]">{p.title}</h3><p className="mt-4 text-sm text-neutral-500 leading-7 max-w-xl">{p.desc}</p><div className="mt-6 flex flex-wrap gap-2">{p.tech.map(t=><span key={t} className="px-2.5 py-1 border border-white/[.08] text-[10px] font-mono text-neutral-600">{t}</span>)}</div><div className="mt-auto pt-8 flex gap-5 text-xs font-medium">{p.github&&<a href={p.github} target="_blank" rel="noreferrer" className="text-neutral-300 hover:text-white flex items-center gap-2"><FaGithub/> GitHub ↗</a>}{p.live&&<a href={p.live} target="_blank" rel="noreferrer" className="text-white flex items-center gap-2"><FaExternalLinkAlt/> Live demo ↗</a>}{!p.live&&<span className="text-neutral-700">Deployment pending</span>}</div></motion.article>)}</div><div className="mt-10 border-y border-white/[.06] py-5 flex flex-wrap gap-x-8 gap-y-3 items-center text-xs"><span className="font-mono text-neutral-600">NEXT</span><strong>House Price Prediction</strong><span className="text-neutral-600">ML project to be added as it becomes portfolio-ready.</span></div></div></section>}
