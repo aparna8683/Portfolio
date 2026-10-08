@@ -53,19 +53,19 @@ const skillCategories = [
     ],
   },
   {
-  //   title: "Computer Science",
-  //   skills: [
-  //     "Data Structures & Algorithms",
-  //     "Object-Oriented Programming",
-  //     "System Design",
-  //     "DBMS",
-  //     "Operating Systems",
-  //     "Computer Networks",
-  //   ],
+    title: "Computer Science",
+    skills: [
+      { name: "DSA", icon: <FaBrain /> },
+      { name: "OOP", icon: <FaBrain /> },
+      { name: "System Design", icon: <FaBrain /> },
+      { name: "DBMS", icon: <FaBrain /> },
+      { name: "Operating Systems", icon: <FaBrain /> },
+      { name: "Computer Networks", icon: <FaBrain /> },
+    ],
   },
 
   {
-    title: "AI & ML",
+    title: "AI, LLMs & Systems",
     skills: [
       { name: "Artificial Intelligence", icon: <FaBrain /> },
       { name: "Machine Learning", icon: <FaBrain /> },
