@@ -1,106 +1,26 @@
 import { motion } from "framer-motion";
 
-const cards = [
-  {
-    emoji: "🎓",
-    title: "Education",
-    desc: "B.Tech in Artificial Intelligence & Machine Learning\nABES Engineering College\n2023 - 2027",
-  },
-  {
-    emoji: "💻",
-    title: "Problem Solving",
-    desc: "Practicing DSA, system design, DBMS, OS, and AI through projects, notes, and interview preparation.",
-  },
-  {
-    emoji: "🏆",
-    title: "Achievements",
-    desc: "2nd Prize Winner at IMS Ghaziabad Web-a-thon.",
-  },
-  {
-    emoji: "🚀",
-    title: "Hackathons",
-    desc: "Smart India Hackathon Participant and national-level competitions.",
-  },
+const cards=[
+ {label:"EDUCATION",title:"B.Tech — AI & ML",desc:"ABES Engineering College · 2023–2027"},
+ {label:"FOCUS",title:"AI + Full Stack",desc:"LLMs, agents, APIs, React and scalable software"},
+ {label:"CURRENTLY LEARNING",title:"Systems thinking",desc:"System design, DBMS, OS, DSA and practical architecture"},
+ {label:"BUILDING",title:"From idea to deployment",desc:"Turning experiments into useful, explainable products"}
 ];
 
-const About = () => {
-  return (
-    <section
-      id="about"
-      className="relative py-32 bg-[#0B1020] text-white overflow-hidden"
-    >
-      {/* Background Glow */}
-      <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-violet-500/10 rounded-full blur-3xl"></div>
-
-      <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
-          {/* Left Side */}
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
-            <p className="text-cyan-400 font-semibold tracking-wider mb-3">
-              ABOUT ME
-            </p>
-
-            <h2 className="text-4xl md:text-5xl font-bold leading-tight">
-              Passionate About Building
-              <span className="bg-gradient-to-r from-cyan-400 to-violet-400 bg-clip-text text-transparent">
-                {" "}
-                Impactful Technology
-              </span>
-            </h2>
-
-            <p className="mt-6 text-slate-400 text-lg leading-relaxed">
-              I'm Aparna Singh, a B.Tech student specializing in Artificial
-              Intelligence & Machine Learning at ABES Engineering College.
-            </p>
-
-            <p className="mt-4 text-slate-400 text-lg leading-relaxed">
-              I enjoy building full-stack applications, exploring AI, solving
-              challenging DSA problems, and participating in hackathons that
-              push me beyond my comfort zone.
-            </p>
-
-            <p className="mt-4 text-slate-400 text-lg leading-relaxed">
-              I like learning by building: taking an idea, turning it into a working system, then understanding why the system works.
-            </p>
-          </motion.div>
-
-          {/* Right Side Cards */}
-          <div className="grid sm:grid-cols-2 gap-6">
-            {cards.map((card, index) => (
-              <motion.div
-                key={card.title}
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{
-                  duration: 0.5,
-                  delay: index * 0.1,
-                }}
-                viewport={{ once: true }}
-                whileHover={{
-                  scale: 1.05,
-                  y: -5,
-                }}
-                className="p-6 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-md hover:border-cyan-400/30 transition-all duration-300"
-              >
-                <div className="text-3xl mb-4">{card.emoji}</div>
-
-                <h3 className="text-xl font-semibold mb-3">{card.title}</h3>
-
-                <p className="text-slate-400 whitespace-pre-line">
-                  {card.desc}
-                </p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
+export default function About(){
+ return <section id="about" className="relative py-32 bg-[#090909] text-white overflow-hidden">
+   <div className="absolute inset-0 pointer-events-none">
+     <div className="about-float float-a">CURIOUS</div><div className="about-float float-b">BUILD</div><div className="about-float float-c">LEARN</div><div className="about-float float-d">ITERATE</div>
+   </div>
+   <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
+    <div className="grid lg:grid-cols-[.8fr_1.2fr] gap-20">
+      <div><p className="section-kicker">01 / ABOUT</p><h2 className="display-title">A developer who likes to understand <em>why</em>.</h2></div>
+      <div>
+        <p className="about-lead">I’m Aparna, an AI/ML student and full-stack developer. I enjoy taking an idea from a rough problem statement to a working product — and understanding the engineering underneath it.</p>
+        <p className="about-copy">Outside the code editor, I play chess and sudoku. Nothing dramatic — chess keeps me thinking ahead, while sudoku makes me comfortable with constraints and patterns. That same mindset shows up in how I approach software.</p>
+        <div className="about-cards">{cards.map((c,i)=><motion.article key={c.label} initial={{opacity:0,y:20}} whileInView={{opacity:1,y:0}} transition={{delay:i*.08}} viewport={{once:true}} className="about-card"><span>{c.label}</span><strong>{c.title}</strong><p>{c.desc}</p></motion.article>)}</div>
       </div>
-    </section>
-  );
-};
-
-export default About;
+    </div>
+   </div>
+ </section>
+}
