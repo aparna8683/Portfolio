@@ -1,4 +1,78 @@
 @import "tailwindcss";
-:root{font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#f5f5f5;background:#080808;font-synthesis:none;text-rendering:optimizeLegibility}
-*{box-sizing:border-box}html{scroll-behavior:smooth;background:#080808}body{margin:0;background:#080808;color:#f5f5f5;overflow-x:hidden}a{text-decoration:none}
-.section-kicker{font:600 11px/1.2 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.18em;color:#737373}.display-title{font-size:clamp(42px,5.5vw,76px);line-height:.98;letter-spacing:-.055em;margin:14px 0}.display-title em{font-style:normal;color:#d4d4d4}.about-lead{font-size:clamp(22px,2.4vw,32px);line-height:1.35;letter-spacing:-.025em;color:#ededed;margin:0}.about-copy{color:#737373;line-height:1.8;font-size:16px;max-width:720px;margin:22px 0 36px}.about-cards{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.about-card{padding:20px;border:1px solid #1f1f1f;background:#0d0d0d;min-height:145px;transition:transform .25s,border-color .25s}.about-card:hover{transform:translateY(-4px);border-color:#3a3a3a}.about-card span{display:block;color:#5f5f5f;font:600 9px ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.14em;margin-bottom:24px}.about-card strong{font-size:17px;font-weight:600}.about-card p{color:#737373;font-size:12px;line-height:1.6;margin:8px 0 0}.about-float{position:absolute;color:#202020;font:800 clamp(28px,4vw,60px)/1 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:-.08em;animation:floatWord 8s ease-in-out infinite}.float-a{top:15%;right:5%}.float-b{top:42%;left:2%;animation-delay:-2s}.float-c{bottom:16%;right:10%;animation-delay:-4s}.float-d{top:70%;left:16%;animation-delay:-6s}@keyframes floatWord{0%,100%{transform:translate3d(0,0,0)}50%{transform:translate3d(10px,-16px,0)}}@media(max-width:700px){.about-cards{grid-template-columns:1fr}.about-float{display:none}}
+
+:root{font-family:"DM Sans",ui-sans-serif,system-ui,sans-serif;color:#f2f0ea;background:#0a0a09}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;background:#0a0a09}
+body{margin:0;background:#0a0a09;color:#f2f0ea;overflow-x:hidden}
+a{text-decoration:none}
+button,a{ -webkit-tap-highlight-color:transparent }
+
+.section-kicker{
+  font-family:"DM Sans",sans-serif;
+  font-size:11px;
+  line-height:1.2;
+  font-weight:600;
+  letter-spacing:.14em;
+  color:#706d66;
+}
+.display-title{
+  font-family:"Space Grotesk",sans-serif;
+  font-size:clamp(46px,5.8vw,82px);
+  line-height:.98;
+  font-weight:500;
+  letter-spacing:-.055em;
+  margin:14px 0;
+  color:#f2f0ea;
+}
+.display-title em{font-style:normal;color:#8e8a82}
+.about-lead{
+  font-family:"Space Grotesk",sans-serif;
+  font-size:clamp(24px,2.5vw,35px);
+  line-height:1.28;
+  font-weight:400;
+  letter-spacing:-.035em;
+  color:#ebe8e0;
+  margin:0;
+}
+.about-copy{
+  color:#98948b;
+  line-height:1.8;
+  font-size:16px;
+  max-width:720px;
+  margin:22px 0 36px;
+}
+.about-cards{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.about-card{
+  padding:22px;
+  border:1px solid #282721;
+  background:#11110f;
+  min-height:145px;
+  transition:transform .25s,border-color .25s,background .25s;
+}
+.about-card:hover{transform:translateY(-4px);border-color:#454239;background:#151512}
+.about-card span{display:block;color:#706d66;font-size:10px;font-weight:600;letter-spacing:.13em;margin-bottom:24px}
+.about-card strong{font-family:"Space Grotesk",sans-serif;font-size:18px;font-weight:500;letter-spacing:-.02em}
+.about-card p{color:#817e76;font-size:13px;line-height:1.65;margin:8px 0 0}
+.about-float{
+  position:absolute;
+  color:#181815;
+  font-family:"Space Grotesk",sans-serif;
+  font-weight:600;
+  font-size:clamp(32px,4vw,64px);
+  line-height:1;
+  letter-spacing:-.06em;
+  animation:floatWord 8s ease-in-out infinite;
+}
+.float-a{top:15%;right:5%}
+.float-b{top:42%;left:2%;animation-delay:-2s}
+.float-c{bottom:16%;right:10%;animation-delay:-4s}
+.float-d{top:70%;left:16%;animation-delay:-6s}
+@keyframes floatWord{0%,100%{transform:translate3d(0,0,0)}50%{transform:translate3d(10px,-16px,0)}}
+.project-image{filter:saturate(.35) contrast(1.02);transition:filter .4s,transform .5s}
+.project-card:hover .project-image{filter:saturate(.7) contrast(1.04);transform:scale(1.035)}
+.note-image{filter:grayscale(1) sepia(.12);opacity:.78}
+@media(max-width:700px){
+  .about-cards{grid-template-columns:1fr}
+  .about-float{display:none}
+  .display-title{letter-spacing:-.045em}
+}
