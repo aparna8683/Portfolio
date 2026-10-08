@@ -4,6 +4,7 @@ import Skills from "../components/Skills";
 import Projects from "../components/Projects";
 import Learning from "../components/Learning";
 import BeyondCode from "../components/BeyondCode";
+import Contact from "../components/Contact";
 import Navbar from "../components/Navbar";
 
 function Home() {
@@ -16,6 +17,7 @@ function Home() {
       <Projects />
       <Learning />
       <BeyondCode />
+      <Contact />
     </>
   );
 }
