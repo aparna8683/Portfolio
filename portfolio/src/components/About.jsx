@@ -1,3 +1,83 @@
 import { motion } from "framer-motion";
-const cards=[{label:"EDUCATION",title:"B.Tech — AI & ML",desc:"ABES Engineering College · 2023–2027"},{label:"FOCUS",title:"AI + Full Stack",desc:"LLMs, agents, APIs, React and scalable software"},{label:"CURRENTLY LEARNING",title:"Systems thinking",desc:"System design, DBMS, OS, DSA and practical architecture"},{label:"BUILDING",title:"From idea to deployment",desc:"Turning experiments into useful, explainable products"}];
-export default function About(){return <section id="about" className="relative py-32 bg-[#090909] text-white overflow-hidden"><div className="absolute inset-0 pointer-events-none"><div className="about-float float-a">CURIOUS</div><div className="about-float float-b">BUILD</div><div className="about-float float-c">LEARN</div><div className="about-float float-d">ITERATE</div></div><div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10"><div className="grid lg:grid-cols-[.8fr_1.2fr] gap-20"><div><p className="section-kicker">01 / ABOUT</p><h2 className="display-title">A developer who likes to understand <em>why</em>.</h2></div><div><p className="about-lead">I’m Aparna, an AI/ML student and full-stack developer. I enjoy taking an idea from a rough problem statement to a working product — and understanding the engineering underneath it.</p><p className="about-copy">Outside the code editor, I play chess and sudoku. Chess keeps me thinking ahead, while sudoku makes me comfortable with constraints and patterns. That same mindset shows up in how I approach software.</p><div className="about-cards">{cards.map((c,i)=><motion.article key={c.label} initial={{opacity:0,y:20}} whileInView={{opacity:1,y:0}} transition={{delay:i*.08}} viewport={{once:true}} className="about-card"><span>{c.label}</span><strong>{c.title}</strong><p>{c.desc}</p></motion.article>)}</div></div></div></div></section>}
+
+const cards = [
+  { number: "01", label: "EDUCATION", title: "B.Tech — AI & ML", desc: "ABES Engineering College · 2023–2027" },
+  { number: "02", label: "FOCUS", title: "AI + Full Stack", desc: "LLMs, agents, APIs, React and scalable software" },
+  { number: "03", label: "LEARNING", title: "Systems thinking", desc: "System design, DBMS, OS, DSA and practical architecture" },
+  { number: "04", label: "BUILDING", title: "Ideas → Products", desc: "Turning experiments into useful, explainable software" }
+];
+
+export default function About() {
+  return (
+    <section id="about" className="about-section">
+      <div className="about-grid-lines" aria-hidden="true" />
+
+      <div className="about-floating-words" aria-hidden="true">
+        <span className="about-word word-curious">CURIOUS</span>
+        <span className="about-word word-build">BUILD</span>
+        <span className="about-word word-learn">LEARN</span>
+        <span className="about-word word-iterate">ITERATE</span>
+      </div>
+
+      <div className="about-inner">
+        <div className="about-heading-column">
+          <div className="about-index">
+            <span>01</span>
+            <i />
+            <span>ABOUT ME</span>
+          </div>
+
+          <h2 className="about-title">
+            I like to understand
+            <span className="about-title-accent"> why.</span>
+          </h2>
+
+          <p className="about-title-note">
+            Curiosity first. <br />
+            Code second.
+          </p>
+        </div>
+
+        <div className="about-content-column">
+          <p className="about-lead">
+            I’m <strong>Aparna</strong> — an AI/ML student and full-stack developer
+            who enjoys turning <em>“what if?”</em> into something that actually works.
+          </p>
+
+          <p className="about-copy">
+            I like being close to the whole process: understanding the problem,
+            designing the system, writing the code, connecting the AI layer,
+            and eventually putting the product in someone’s hands. I’m especially
+            interested in the space where <span>AI meets practical software engineering.</span>
+          </p>
+
+          <div className="about-personal-line">
+            <span className="personal-dot" />
+            <span>When I’m away from the editor</span>
+            <strong>Chess · Sudoku · Piano</strong>
+          </div>
+
+          <div className="about-cards">
+            {cards.map((card, i) => (
+              <motion.article
+                key={card.number}
+                className="about-card"
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: i * 0.08, duration: 0.45 }}
+                viewport={{ once: true, margin: "-60px" }}
+              >
+                <div className="about-card-top">
+                  <span>{card.number}</span>
+                  <span>{card.label}</span>
+                </div>
+                <strong>{card.title}</strong>
+                <p>{card.desc}</p>
+              </motion.article>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
