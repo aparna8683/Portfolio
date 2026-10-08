@@ -84,7 +84,7 @@ const Skills = () => {
       className="relative py-32 bg-[#0B1020] text-white overflow-hidden"
     >
       {/* Glow */}
-      <div className="absolute left-0 top-0 w-[400px] h-[400px] bg-cyan-500/10 rounded-full blur-3xl"></div>
+      <div className="absolute left-0 top-0 w-[400px] h-[400px] bg-white/[.03] rounded-full blur-3xl"></div>
 
       <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
         {/* Heading */}
@@ -95,7 +95,7 @@ const Skills = () => {
           viewport={{ once: true }}
           className="text-center mb-20"
         >
-          <p className="text-cyan-400 font-semibold tracking-wider mb-3">
+          <p className="text-neutral-300 font-semibold tracking-wider mb-3">
             SKILLS
           </p>
 
@@ -137,7 +137,7 @@ const Skills = () => {
                     }}
                     className="flex items-center gap-4 p-4 rounded-xl bg-white/5 border border-white/10"
                   >
-                    <div className="text-3xl text-cyan-400">{skill.icon}</div>
+                    <div className="text-3xl text-neutral-300">{skill.icon}</div>
 
                     <span className="text-slate-200 font-medium">
                       {skill.name}
