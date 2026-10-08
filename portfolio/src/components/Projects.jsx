@@ -44,7 +44,7 @@ const projects=[
     desc:"An interview-practice platform built around AI-assisted mock sessions and preparation workflows.",
     tech:["React","Node.js","MongoDB","AI"],
     image:"https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1200&q=80",
-    github:null,
+    github:"https://github.com/aparna8683/GUVII_PROJECT",
     live:"https://guvii-project-frontendd.onrender.com/"
   },
   {
