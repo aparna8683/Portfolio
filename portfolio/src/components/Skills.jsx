@@ -52,7 +52,7 @@ const skillCategories = [
       { name: "Git", icon: <FaGitAlt /> },
     ],
   },
-  // {
+  {
   //   title: "Computer Science",
   //   skills: [
   //     "Data Structures & Algorithms",
@@ -62,7 +62,7 @@ const skillCategories = [
   //     "Operating Systems",
   //     "Computer Networks",
   //   ],
-  // },
+  },
 
   {
     title: "AI & ML",
@@ -70,6 +70,9 @@ const skillCategories = [
       { name: "Artificial Intelligence", icon: <FaBrain /> },
       { name: "Machine Learning", icon: <FaBrain /> },
       { name: "Prompt Engineering", icon: <FaBrain /> },
+      { name: "RAG & AI Agents", icon: <FaBrain /> },
+      { name: "FastAPI", icon: <FaBrain /> },
+      { name: "System Design", icon: <FaBrain /> },
     ],
   },
 ];
