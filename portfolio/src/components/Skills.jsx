@@ -1,156 +1,29 @@
 import { motion } from "framer-motion";
+import { FaReact,FaNodeJs,FaPython,FaHtml5,FaCss3Alt,FaJs,FaBrain,FaGitAlt } from "react-icons/fa";
+import { SiCplusplus,SiMongodb,SiExpress,SiTailwindcss,SiFirebase,SiMysql } from "react-icons/si";
 
-import {
-  FaReact,
-  FaNodeJs,
-  FaPython,
-  FaHtml5,
-  FaCss3Alt,
-  FaJs,
-  FaBrain,
-  FaGitAlt,
-} from "react-icons/fa";
-
-import {
-  SiCplusplus,
-  SiMongodb,
-  SiExpress,
-  SiTailwindcss,
-  SiFirebase,
-  SiMysql,
-} from "react-icons/si";
-
-const skillCategories = [
-  {
-    title: "Frontend",
-    skills: [
-      { name: "React", icon: <FaReact /> },
-      { name: "JavaScript", icon: <FaJs /> },
-      { name: "HTML5", icon: <FaHtml5 /> },
-      { name: "CSS3", icon: <FaCss3Alt /> },
-      { name: "Tailwind", icon: <SiTailwindcss /> },
-    ],
-  },
-
-  {
-    title: "Backend",
-    skills: [
-      { name: "Node.js", icon: <FaNodeJs /> },
-      { name: "Express.js", icon: <SiExpress /> },
-      { name: "MongoDB", icon: <SiMongodb /> },
-      { name: "Firebase", icon: <SiFirebase /> },
-      { name: "MySQL", icon: <SiMysql /> },
-    ],
-  },
-
-  {
-    title: "Programming",
-    skills: [
-      { name: "C++", icon: <SiCplusplus /> },
-      { name: "Python", icon: <FaPython /> },
-      { name: "SQL", icon: <SiMysql /> },
-      { name: "Git", icon: <FaGitAlt /> },
-    ],
-  },
-  {
-    title: "Computer Science",
-    skills: [
-      { name: "DSA", icon: <FaBrain /> },
-      { name: "OOP", icon: <FaBrain /> },
-      { name: "System Design", icon: <FaBrain /> },
-      { name: "DBMS", icon: <FaBrain /> },
-      { name: "Operating Systems", icon: <FaBrain /> },
-      { name: "Computer Networks", icon: <FaBrain /> },
-    ],
-  },
-
-  {
-    title: "AI, LLMs & Systems",
-    skills: [
-      { name: "Artificial Intelligence", icon: <FaBrain /> },
-      { name: "Machine Learning", icon: <FaBrain /> },
-      { name: "Prompt Engineering", icon: <FaBrain /> },
-      { name: "RAG & AI Agents", icon: <FaBrain /> },
-      { name: "FastAPI", icon: <FaBrain /> },
-      { name: "System Design", icon: <FaBrain /> },
-    ],
-  },
+const skillCategories=[
+ {title:"Frontend",skills:[["React",<FaReact/>],["JavaScript",<FaJs/>],["HTML5",<FaHtml5/>],["CSS3",<FaCss3Alt/>],["Tailwind",<SiTailwindcss/>]]},
+ {title:"Backend",skills:[["Node.js",<FaNodeJs/>],["Express.js",<SiExpress/>],["MongoDB",<SiMongodb/>],["Firebase",<SiFirebase/>],["MySQL",<SiMysql/>]]},
+ {title:"Programming",skills:[["C++",<SiCplusplus/>],["Python",<FaPython/>],["SQL",<SiMysql/>],["Git",<FaGitAlt/>]]},
+ {title:"Computer Science",skills:[["DSA",<FaBrain/>],["OOP",<FaBrain/>],["System Design",<FaBrain/>],["DBMS",<FaBrain/>],["Operating Systems",<FaBrain/>],["Computer Networks",<FaBrain/>]]},
+ {title:"AI, LLMs & Systems",skills:[["Artificial Intelligence",<FaBrain/>],["Machine Learning",<FaBrain/>],["Prompt Engineering",<FaBrain/>],["RAG & AI Agents",<FaBrain/>],["FastAPI",<FaBrain/>],["System Design",<FaBrain/>]]}
 ];
 
-const Skills = () => {
-  return (
-    <section
-      id="skills"
-      className="relative py-32 bg-[#0B1020] text-white overflow-hidden"
-    >
-      {/* Glow */}
-      <div className="absolute left-0 top-0 w-[400px] h-[400px] bg-white/[.03] rounded-full blur-3xl"></div>
-
-      <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
-        {/* Heading */}
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
-          viewport={{ once: true }}
-          className="text-center mb-20"
-        >
-          <p className="text-neutral-300 font-semibold tracking-wider mb-3">
-            SKILLS
-          </p>
-
-          <h2 className="text-4xl md:text-5xl font-bold">
-            Skills & Technologies
-          </h2>
-
-          <p className="mt-6 text-slate-400 text-lg max-w-2xl mx-auto">
-            Technologies I use to build modern web applications, AI-powered
-            solutions, and scalable software products.
-          </p>
-        </motion.div>
-
-        {/* Skill Categories */}
-        <div className="grid lg:grid-cols-2 gap-8">
-          {skillCategories.map((category, index) => (
-            <motion.div
-              key={category.title}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{
-                duration: 0.6,
-                delay: index * 0.1,
-              }}
-              viewport={{ once: true }}
-              whileHover={{
-                y: -5,
-              }}
-              className="rounded-3xl border border-white/10 bg-white/5 backdrop-blur-md p-8"
-            >
-              <h3 className="text-2xl font-semibold mb-8">{category.title}</h3>
-
-              <div className="grid grid-cols-2 gap-5">
-                {category.skills.map((skill) => (
-                  <motion.div
-                    key={skill.name}
-                    whileHover={{
-                      scale: 1.05,
-                    }}
-                    className="flex items-center gap-4 p-4 rounded-xl bg-white/5 border border-white/10"
-                  >
-                    <div className="text-3xl text-neutral-300">{skill.icon}</div>
-
-                    <span className="text-slate-200 font-medium">
-                      {skill.name}
-                    </span>
-                  </motion.div>
-                ))}
-              </div>
-            </motion.div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-};
-
-export default Skills;
+export default function Skills(){
+ return <section id="skills" className="relative py-32 bg-[#0a0a09] text-[#f2f0ea] border-t border-[#282721]">
+  <div className="max-w-7xl mx-auto px-6 lg:px-12">
+   <motion.div initial={{opacity:0,y:30}} whileInView={{opacity:1,y:0}} transition={{duration:.6}} viewport={{once:true}} className="mb-16">
+    <p className="section-kicker">02A / TOOLKIT</p>
+    <h2 className="display-title">Tools I use to<br/><em>turn ideas into software.</em></h2>
+    <p className="mt-6 text-[#817e76] text-base leading-8 max-w-2xl">A practical stack across full-stack development, AI systems and core computer science — with an emphasis on understanding the fundamentals behind the tools.</p>
+   </motion.div>
+   <div className="grid lg:grid-cols-2 gap-3">
+    {skillCategories.map((category,index)=><motion.div key={category.title} initial={{opacity:0,y:20}} whileInView={{opacity:1,y:0}} transition={{duration:.5,delay:index*.06}} viewport={{once:true}} className="border border-[#282721] bg-[#11110f] p-7 hover:border-[#454239] transition-colors">
+      <h3 className="font-['Space_Grotesk'] text-xl font-medium mb-7">{category.title}</h3>
+      <div className="grid grid-cols-2 gap-2">{category.skills.map(([name,icon])=><div key={name} className="flex items-center gap-3 p-3 border border-[#282721] bg-[#0a0a09]"><span className="text-lg text-[#aaa69d]">{icon}</span><span className="text-sm text-[#b8b4ac]">{name}</span></div>)}</div>
+    </motion.div>)}
+   </div>
+  </div>
+ </section>
+}
