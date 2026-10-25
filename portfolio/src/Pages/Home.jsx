@@ -6,6 +6,7 @@ const About = lazy(() => import("../components/About"));
 const Skills = lazy(() => import("../components/Skills"));
 const Projects = lazy(() => import("../components/Projects"));
 const Learning = lazy(() => import("../components/Learning"));
+const Achievements = lazy(() => import("../components/Achievements"));
 const BeyondCode = lazy(() => import("../components/BeyondCode"));
 const Contact = lazy(() => import("../components/Contact"));
 
@@ -24,6 +25,7 @@ function Home() {
         <About />
         <Skills />
         <Projects />
+        <Achievements />
         <Learning />
         <BeyondCode />
         <Contact />
